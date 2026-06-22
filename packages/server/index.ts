@@ -4,6 +4,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello from the API!' });
+});
+
 app.get('/', (req, res) => {
   res.send('Hello from the server!');
 });
