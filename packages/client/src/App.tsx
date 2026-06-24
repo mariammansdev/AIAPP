@@ -2,10 +2,11 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-import './App.css'
+import { Button } from '../@/components/ui/button'
 
 function App() {
   const [message, setMessage] = useState('')
+  
 
   useEffect(() => {
     debugger
@@ -16,7 +17,11 @@ function App() {
   }, [])
 
   return (
-    <p style={{fontSize: "60px"}}>{message || 'Loading...'}</p>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-background">
+      <p className="text-4xl text-cyan-500">{message || 'Loading...'}</p>
+      <Button variant="default" size="default">Click Me</Button>
+    </div>
+   
   )
 }
 
